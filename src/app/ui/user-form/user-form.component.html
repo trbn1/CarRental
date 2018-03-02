@@ -1,0 +1,52 @@
+
+
+<div class="container">
+    <form class="form-signin" [formGroup]="userForm"  *ngIf="newUser" (ngSubmit)="signup()">
+        
+          <h2 class="form-signin-heading">NOWY UŻYTKOWNIK</h2>
+        <hr>
+          <label for="email" class="sr-only">E-mail</label>
+          <input type="email" id="email" class="form-control" placeholder="E-mail" formControlName="email" required autofocus>
+        
+          <div *ngIf="formErrors.email" class="notification is-danger">
+              {{ formErrors.email }}
+          </div>
+        
+          <label for="password" class="sr-only">Hasło</label>
+          <input type="password" id="password" class="form-control" placeholder="Hasło" formControlName="password" required>
+        
+          <div *ngIf="formErrors.password" class="notification is-danger">
+              {{ formErrors.password }}
+          </div>
+          
+          <div *ngIf="userForm.valid" class="notification is-success">Wszystko OK</div>
+          <button class="btn btn-lg btn-primary btn-block" type="submit" [disabled]="!userForm.valid" *ngIf="regEnabled">Wyślij</button>
+          <hr>
+          <button class="btn" (click)="toggleForm()">Logowanie</button>
+        </form>
+      
+      <form class="form-signin" [formGroup]="userForm"  *ngIf="!newUser"  (ngSubmit)="login()">  
+                <h2 class="form-signin-heading">LOGOWANIE</h2>
+    <hr>
+                <label for="email" class="sr-only">E-mail</label>
+                <input type="email" id="email" class="form-control" placeholder="E-mail" formControlName="email" required autofocus>
+    
+                <div *ngIf="formErrors.email" class="help is-danger">
+                    {{ formErrors.email }}
+                </div>
+    
+                <label for="password" class="sr-only">Hasło</label>
+                <input type="password" id="password" class="form-control" placeholder="Hasło" formControlName="password" required>
+    
+                <div *ngIf="formErrors.password" class="help is-danger">
+                    {{ formErrors.password }}
+                </div>
+    
+                <button class="btn btn-lg btn-primary btn-block" type="submit" [disabled]="!userForm.valid">Zaloguj</button>
+        
+              <span *ngIf="userForm.valid" class="help is-success">Wszystko OK</span>
+              <hr>
+              <button class="btn" (click)="toggleForm()">Nowy użytkownik</button>
+    </form>
+
+</div>

@@ -1,0 +1,16 @@
+<div class="container">
+    <h2>REZERWACJA</h2>
+  <hr>
+<br>
+<p class="text-center"><strong>WYBIERZ POJAZD</strong></p>
+<br>
+
+<div *ngFor="let item of items | async">
+  <pojazdy-detail [item]='item'></pojazdy-detail>
+</div>
+
+<loading-spinner *ngIf="showSpinner"></loading-spinner>
+<br>
+<hr>
+</div>
+

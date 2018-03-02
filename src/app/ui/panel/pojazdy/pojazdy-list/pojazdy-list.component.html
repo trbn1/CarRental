@@ -1,0 +1,16 @@
+<div class="container">
+<pojazdy-form></pojazdy-form>
+<hr>
+<br>
+<p class="text-center"><strong>LISTA POJAZDÓW</strong></p>
+<br>
+<div *ngFor="let item of items | async">
+  <pojazdy-detail [item]='item'></pojazdy-detail>
+</div>
+
+<loading-spinner *ngIf="showSpinner"></loading-spinner>
+<button type="button" class="btn is-danger" (click)='deleteItems()'>USUŃ WSZYSTKO</button>
+<br>
+<hr>
+</div>
+

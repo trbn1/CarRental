@@ -1,0 +1,33 @@
+    <div class="row">
+        <div class="col-12">
+            <div class="row">
+                <div class="col">
+                    <label for="startdate">Początek rezerwacji</label>
+                    <input type="startdate" id="startdate" class="form-control" placeholder="DD.MM.YYYY" [(ngModel)]="book.startdate" #startdate='ngModel' required>
+                </div>
+                <div class="col">
+                    <label for="enddate">Koniec rezerwacji</label>
+                    <input type="enddate" id="enddate" class="form-control" placeholder="DD.MM.YYYY" [(ngModel)]="book.enddate" #enddate='ngModel' required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <label for="name">Imię</label>
+                    <input type="name" id="name" class="form-control" placeholder="Imię" [(ngModel)]="book.name" #name='ngModel' required>
+                </div>
+                <div class="col">
+                    <label for="surname">Nazwisko</label>
+                    <input type="surname" id="surname" class="form-control" placeholder="Nazwisko" [(ngModel)]="book.surname" #surname='ngModel' required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <label for="phone">Numer telefonu</label>
+                    <input type="phone" id="phone" class="form-control" placeholder="XXX-XXX-XXX" [(ngModel)]="book.phone" #phone='ngModel' required>
+                </div>
+            </div>
+            <div class="col-sm">
+            <button class="btn btn-primary btn-block" type="submit" (click)='createBook()' data-dismiss="modal">ZAREZERWUJ</button>
+            </div>
+        </div>
+    </div>

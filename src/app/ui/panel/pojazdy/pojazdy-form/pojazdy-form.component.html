@@ -1,0 +1,42 @@
+
+    <h2>PANEL</h2>
+    <hr>
+    <div class="row">
+        <div class="col-2">
+        </div>
+
+        <div class="col-8">
+            <p class="text-center"><strong>DODAWANIE POJAZDÓW</strong></p>
+            <div class="row">
+                <div class="col-sm">
+                    <input type="marka" id="marka" class="form-control" placeholder="Marka" [(ngModel)]="item.marka" #marka='ngModel' required>
+                </div>
+                <div class="col-sm">
+                    <input type="model" id="model" class="form-control" placeholder="Model" [(ngModel)]="item.model" #model='ngModel' required>
+                </div>
+                <div class="col-sm">
+                    <input type="paliwo" id="paliwo" class="form-control" placeholder="Paliwo" [(ngModel)]="item.paliwo" #paliwo='ngModel' required>
+                </div>
+                <div class="col-sm">
+                    <input type="skrzynia" id="skrzynia" class="form-control" placeholder="Skrzynia" [(ngModel)]="item.skrzynia" #skrzynia='ngModel' required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm">
+                    <input type="drzwi" id="drzwi" class="form-control" placeholder="Drzwi" [(ngModel)]="item.drzwi" #drzwi='ngModel' required>
+                </div>
+                <div class="col-sm">
+                    <input type="miejsca" id="miejsca" class="form-control" placeholder="Il. miejsc" [(ngModel)]="item.miejsca" #miejsca='ngModel' required>
+                </div>
+                <div class="col-sm">
+                    <input type="silnik" id="silnik" class="form-control" placeholder="Silnik" [(ngModel)]="item.silnik" #silnik='ngModel' required>
+                </div>
+                <div class="col-sm">
+                    <input type="moc" id="moc" class="form-control" placeholder="Moc" [(ngModel)]="item.moc" #moc='ngModel' required>
+                </div>
+            </div>
+            <div class="col-sm">
+            <button class="btn btn-primary btn-block" type="submit" (click)='createItem()'>DODAJ</button>
+            </div>
+        </div>
+    </div>

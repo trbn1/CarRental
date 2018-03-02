@@ -1,0 +1,50 @@
+<div class="container">
+  <div class="table-responsive">
+    <table class="table table-striped table-bordered">
+      <thead>
+        <tr>
+          <th class="text-center">Marka</th>
+          <th class="text-center">Model</th>
+          <th class="text-center">Paliwo</th>
+          <th class="text-center">Skrzynia</th>
+          <th class="text-center">Drzwi</th>
+          <th class="text-center">Il. miejsc</th>
+          <th class="text-center">Silnik [L]</th>
+          <th class="text-center">Moc [KM]</th>
+          <th class="text-center">Wybierz</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+        <td>{{ item.marka || 'Brak marki' }}</td>
+        <td>{{ item.model || 'Brak modelu' }}</td>
+        <td>{{ item.paliwo || 'Brak paliwa' }}</td>
+        <td>{{ item.skrzynia || 'Brak skrzyni' }}</td>
+        <td>{{ item.drzwi || 'Brak drzwi' }}</td>
+        <td>{{ item.miejsca || 'Brak miejsc' }}</td>
+        <td>{{ item.silnik || 'Brak silnika' }}</td>
+        <td>{{ item.moc || 'Brak mocy' }}</td>
+        <td><button class="btn btn-primary btn-block" data-toggle="modal" data-target="#book">X</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="modal fade" id="book" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">REZERWACJA</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <pojazdy-form [timestamp]='item.timestamp'></pojazdy-form>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+
+
