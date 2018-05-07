@@ -9,7 +9,8 @@ import { Item } from '../shared/pojazdy';
 })
 export class ItemDetailComponent {
 
-  @Input() item: Item;
+  @Input()
+  item!: Item;
 
   constructor(private itemSvc: ItemService) { }
 

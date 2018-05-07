@@ -6,7 +6,7 @@ import { Item } from '../shared/pojazdy';
 
 import { Book } from '../shared/pojazdy';
 
-import { Observable } from 'rxjs';
+import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'pojazdy-list',

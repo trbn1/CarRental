@@ -7,7 +7,7 @@ import { Item } from './pojazdy';
 
 import { Book } from './pojazdy';
 
-import { Observable } from 'rxjs';
+import { Observable } from 'rxjs/Observable';
 
 @Injectable()
 export class ItemService {

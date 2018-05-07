@@ -5,7 +5,7 @@ import { AngularFireAuth } from 'angularfire2/auth';
 import { AuthService} from './auth.service';
 import { NotifyService } from './notify.service';
 
-import { Observable } from 'rxjs';
+import { Observable } from 'rxjs/Observable';
 import { map, take, tap } from 'rxjs/operators';
 
 @Injectable()

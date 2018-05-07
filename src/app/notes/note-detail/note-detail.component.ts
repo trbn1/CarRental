@@ -12,7 +12,7 @@ import { Note } from '../note-model';
 export class NoteDetailComponent {
 
   @Input()
-  note: Note;
+  note!: Note;
 
   constructor(private noteService: NoteService) { }
 

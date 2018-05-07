@@ -4,7 +4,7 @@ import { NoteService } from '../note.service';
 
 import { Note } from '../note-model';
 
-import { Observable } from 'rxjs';
+import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'notes-list',
@@ -13,8 +13,8 @@ import { Observable } from 'rxjs';
 })
 export class NotesListComponent implements OnInit {
 
-  notes: Observable<Note[]>;
-  content: string;
+  notes!: Observable<Note[]>;
+  content!: string;
 
   constructor(private noteService: NoteService) { }
 

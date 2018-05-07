@@ -12,19 +12,19 @@ import { ItemService } from '../shared/pojazdy.service';
 })
 export class ItemFormComponent {
 
-  @Input() timestamp: number;
+  @Input()
+  timestamp!: number;
 
   private basePath = '/rezerwacje';
 
   book: Book = new Book();
 
       booksRef: AngularFireList<Book>;
-      bookRef:  AngularFireObject<Book>;
+      bookRef!: AngularFireObject<Book>;
 
       constructor(private db: AngularFireDatabase) {
         this.booksRef = db.list('/rezerwacje');
       }
-
 
       // Default error handling for all actions
       private handleError(error: Error) {
@@ -36,11 +36,9 @@ export class ItemFormComponent {
         this.createBook2(this.book);
         this.book = new Book(); // reset item
       }
-      
+
       // Create a brand new item
       createBook2(book: Book): void {
         this.booksRef.push(book);
       }
-      
-
 }

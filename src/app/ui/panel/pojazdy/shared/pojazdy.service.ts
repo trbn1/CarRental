@@ -5,7 +5,7 @@ import { AngularFireDatabase, AngularFireList, AngularFireObject } from 'angular
 
 import { Item } from './pojazdy';
 
-import { Observable } from 'rxjs';
+import { Observable } from 'rxjs/Observable';
 
 @Injectable()
 export class ItemService {
