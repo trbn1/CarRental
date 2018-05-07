@@ -1,3 +1,4 @@
+import { map } from 'rxjs/operators';
 import { Injectable } from '@angular/core';
 
 import { AngularFireDatabase, AngularFireList, AngularFireObject } from 'angularfire2/database';
@@ -6,7 +7,7 @@ import { Item } from './pojazdy';
 
 import { Book } from './pojazdy';
 
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 
 @Injectable()
 export class ItemService {
@@ -14,7 +15,7 @@ export class ItemService {
   private basePath = '/pojazdy';
 
   itemsRef: AngularFireList<Item>;
-  itemRef:  AngularFireObject<Item>;
+  // itemRef:  AngularFireObject<Item>;
 
   constructor(private db: AngularFireDatabase) {
     this.itemsRef = db.list('/pojazdy');
@@ -22,9 +23,9 @@ export class ItemService {
 
   // Return an observable list of Items
   getItemsList(): Observable<Item[]> {
-    return this.itemsRef.snapshotChanges().map((arr) => {
+    return this.itemsRef.snapshotChanges().pipe(map((arr) => {
       return arr.map((snap) => Object.assign(snap.payload.val(), { $key: snap.key }) );
-    });
+    }));
   }
 
   // Return a single observable item

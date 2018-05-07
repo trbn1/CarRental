@@ -4,7 +4,7 @@ import { NoteService } from '../note.service';
 
 import { Note } from '../note-model';
 
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'notes-list',

@@ -4,7 +4,7 @@ import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument 
 
 import { Note } from './note-model';
 
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 interface NewNote {
@@ -29,12 +29,12 @@ export class NoteService {
 
   getSnapshot(): Observable<Note[]> {
     // ['added', 'modified', 'removed']
-    return this.notesCollection.snapshotChanges().map((actions) => {
+    return this.notesCollection.snapshotChanges().pipe(map((actions) => {
       return actions.map((a) => {
         const data = a.payload.doc.data() as Note;
         return { id: a.payload.doc.id, content: data.content, hearts: data.hearts, time: data.time };
       });
-    });
+    }));
   }
 
   getNote(id: string) {
